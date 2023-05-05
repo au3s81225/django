@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>STOCK</title>
+    <style>
+        #stock {
+            background-color: rgb(125, 165, 201);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);   /*ngrok發布調整距離*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+        }
+
+        #page_title {
+            margin-top: 20px;
+            margin-bottom: auto;
+            color: darkred;
+        }
+        .stock_history {
+            margin-top: 20px;
+            margin-bottom: auto;
+        }
+
+        .stock_history a {
+            text-decoration:none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div id="stock">
+        <h1 id="page_title">台股 上市&上櫃</h1>
+        <strong class="stock_history"><a href="stock_history_form/" target="_blank">個股歷史查詢</a></strong>
+        <strong class="stock_history"><a href="stock_history/" target="_blank">0</a></strong>
+        <strong class="stock_history"><a href="stock_history/" target="_blank">1</a></strong>
+        <strong class="stock_history"><a href="stock_history/" target="_blank">2</a></strong>
+    </div>
+    
+</body>
+</html>

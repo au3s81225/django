@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>個股歷史查詢</title>
+        <style>
+            .errorlist{
+                color: red;
+                background-color: white;
+            }
+
+            .history_form {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin-top: -300px;
+                font-size: 30px;
+            }
+
+            .stocknm, .stockmonth1, .stockmonth2 , button{
+                font-size: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <form method="post" class="history_form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">開搜</button>
+        </form>
+    </body>
+</html>

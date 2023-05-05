@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+          font-size: 50px;  /*ngrok發布調整距離*/
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a, .stock-a {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover, .stock:hover .stock-a {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        li.stock {
+          display: inline-block;
+        }
+        
+        .stock-cont {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 107px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          margin-bottom: auto;
+        }
+        
+        .stock-cont a {
+          color: white;
+          /* padding:auto; */
+          padding: 12px 54px;
+          text-decoration: none;
+          display: block;
+          background-color: #444;
+          text-align: center;
+        }
+        
+        .stock-cont a:hover {
+          background-color: #666;
+        }
+        
+        .stock:hover .stock-cont {
+          display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li class="stock">
+          <a class="stock-a">stock</a>
+          <div class="stock-cont">
+            <a href="/stock/stock_history_form/">個股歷史查詢</a>
+            <a href="#">即時股價</a>
+            <a href="/">計算</a>
+          </div>
+        </li>
+        <li><a href="/">?</a></li>
+      </ul>
+      
+</body>
+</html>

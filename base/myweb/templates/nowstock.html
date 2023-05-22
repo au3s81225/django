@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>即時股價</title>
+    <style>
+        table, th, td{
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        .notfind {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="notfind">
+        <h1>無此股票:</h1>
+            {% for notfind in n %}
+                {{notfind}}
+                {% if not forloop.last %},{% endif %}
+            {% endfor %}
+    </div>
+    <div class="tab">
+        <table>
+            <tr>
+                <th>名稱</th>
+                <th>代號</th>
+                <th>收盤</th>
+                <th>開盤</th>
+                <th>最高</th>
+                <th>最低</th>
+                <th>日期</th>
+                <th>成交量</th>
+                <th>時間</th>
+            </tr>
+            {% for x in d %}
+            <tr>
+                <td>{{x.stock_name}}</td>
+                <td>{{x.stock_num}}</td>
+                <td>{{x.stock_price}}</td>
+                <td>{{x.stock_open}}</td>
+                <td>{{x.stock_highest}}</td>
+                <td>{{x.stock_lowest}}</td>
+                <td>{{x.stock_date}}</td>
+                <td>{{x.turnover}}</td>
+                <td>{{x.time}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

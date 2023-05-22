@@ -30,7 +30,7 @@
     </head>
     <body>
         {% include 'navbar.html' %}
-        <form method="post" class="history_form">
+        <form method="post" class="history_form" action="/stock/stock_history/" target="_blank">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">開搜</button>

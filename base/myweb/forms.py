@@ -1,5 +1,7 @@
 from django import forms
 import datetime
+import pandas as pd
+
 
 this_month = datetime.datetime.now().month
 
@@ -25,14 +27,29 @@ class HistoryForm(forms.Form):
             'class': 'stockmonth2',
         })
     )
+        # stocknm = self.cleaned_data.get('stocknm')
+        # if len(stocknm) < 4 or len(stocknm) >5:
+        #     raise forms.ValidationError('股票代號錯誤')
+        # return stocknm
+
+class NowStock(forms.Form):
+    stocknm = forms.CharField(
+        label="股票代號",
+        widget=forms.TextInput(attrs={
+        'class': 'stocknm',
+        'placeholder': '2330 1101'
+        })
+    )
+
     # def clean_stocknm(self):
     #     stocknm = self.cleaned_data.get('stocknm')
-    #     if len(stocknm) < 4 or len(stocknm) >5:
-    #         raise forms.ValidationError('股票代號錯誤')
-    #     return stocknm
-    
-    # def clean_stockmonth1(self):
-    #     stocknm = self.cleaned_data.get('stockmonth1')
-    #     if len(stocknm) != 7:
-    #         raise forms.ValidationError('日期錯誤')
-    #     return stocknm
+    #     pass
+
+class CustomizeForm(forms.Form):
+    stocknm = forms.CharField(
+        label="股票代號",
+        widget=forms.TextInput(attrs={
+        'class': 'stocknm',
+        'placeholder': '2330 1101'
+        })
+    )
